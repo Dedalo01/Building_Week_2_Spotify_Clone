@@ -337,9 +337,7 @@ async function searchData(data) {
     { typeArtist, nameArtist, artistId },
     { titleAlbum, typeAlbum },
   ];
-  /* searchArr.push(searchPotentialResultsArr) */
-  // SISTEMA CON LA REGEX !IMPORTANT
-  //const regex = `/${data}/i`;
+
   const regExp = new RegExp(data, "i");
   console.log(regExp);
   let mostRelevantResult;
@@ -355,6 +353,9 @@ async function searchData(data) {
   }
 
   console.log("Most Relevant Result", mostRelevantResult);
+
+  const tracklist = getRelevantTracks(songList, mostRelevantResult);
+  console.log("tracklist", tracklist);
   // controlla se togliere primo elemento invece di fare if ogni ciclo (slice) ASPETTA A FARE SLiCE
   songList.forEach((track, index) => {
     // brani section
@@ -384,18 +385,20 @@ function extractArtistData(song) {
   return { id, name, covers: [picture_small, picture_medium], type };
 }
 
-const provaSearch = "dwoefe";
-const searchPippo = await searchData(provaSearch);
+// TEST SEARCH
+const provaSearch = "lucia";
+//const searchPippo = await searchData(provaSearch);
 //console.log(searchPippo);
 
 /* TODO: sezione brani affinaco risultato rilevante:
 in caso di album: come piu rilevante, uso canzoni date da 
 search.
-in caso di artista: o uso canzoni di search CONTRIBUTORS???
+in caso di artista: o uso canzoni di search CONTRIBUTORS??? uso proxy tacklist??? non c'è tempo
 in caso di brano: uso canzoni di search
 */
 function getRelevantTracks(trackList, relevantResult) {
-  if (relevantResult.titleTrack) {
+  const relevantTrackList = [];
+  if (relevantResult) {
     for (let i = 0; i < 4; i++) {
       const {
         id,
@@ -403,16 +406,107 @@ function getRelevantTracks(trackList, relevantResult) {
         rank,
         explicit_lyrics,
         duration,
+        artist: {
+          id: artistId,
+          name,
+          picture_small,
+          picture_medium,
+          picture_big,
+        },
         album: { cover_small, cover_medium },
       } = trackList[i];
+
+      const actualTrack = {
+        id,
+        title,
+        rank,
+        explicit_lyrics,
+        duration,
+        album: { cover_small, cover_medium },
+        artist: {
+          artistId,
+          name,
+          pictures: { picture_small, picture_medium, picture_big },
+        },
+      };
+
+      relevantTrackList.push(actualTrack);
     }
   }
+  /* else if (relevantResult.nameArtist) {
+    for (let i = 0; i < 4; i++) {
+      const { id, name, picture_small, picture_medium } = trackList[i].artist;
+
+      const actualTrack = {
+        id,
+        name,
+        pictures: { picture_small, picture_medium },
+      };
+
+      relevantTrackList.push(actualTrack);
+    }
+  } else if (relevantResult.titleAlbum) {
+    for (let i = 0; i < 4; i++) {
+      const { id, title, cover_small, cover_medium } = trackList[i].album;
+
+      const actualTrack = {
+        id,
+        title,
+        covers: { cover_small, cover_medium },
+      };
+
+      relevantTrackList.push(actualTrack);
+    }
+  } */
+
+  return relevantTrackList;
 }
 // TODO: funzione per convertire tempo in secondi, minuti, ore, giorni 45849538 / 60 / 60 /60 /60
 // return stringa già composta per pagina artista? album?
 // return "1 g 2 h 40 min" (forse giorno è eccessivo)
+function convertInHourMinuteSecond(seconds) {
+  let totalSeconds = seconds;
+  const HOUR_TOTAL_MINUTES = 3600;
+  const MINUTE_TOTAL_SECONDS = 60;
 
+  let hours = Math.floor(totalSeconds / HOUR_TOTAL_MINUTES);
+  let minutes = Math.floor(
+    (totalSeconds - hours * HOUR_TOTAL_MINUTES) / MINUTE_TOTAL_SECONDS
+  );
+
+  let secondsLeft =
+    totalSeconds - hours * HOUR_TOTAL_MINUTES - minutes * MINUTE_TOTAL_SECONDS;
+
+  let finalStr = "";
+  if (hours === 0 && minutes === 0) {
+    finalStr = `circa ${secondsLeft} sec`;
+  } else if (hours === 0 && secondsLeft === 0) {
+    finalStr = `circa ${minutes} min`;
+  } else if (minutes === 0 && secondsLeft === 0) {
+    finalStr = `circa ${hours} hours`;
+  } else if (secondsLeft === 0) {
+    finalStr = `circa ${hours} hours ${minutes} min`;
+  } else {
+    finalStr = `circa ${hours} hours ${minutes} min ${secondsLeft} sec`;
+  }
+
+  return finalStr;
+}
+
+const tempo = 3600;
+const oreMinuti = convertInHourMinuteSecond(tempo);
+console.log(oreMinuti);
 // TODO: stessa roba per brani, solo che in formato 3:12 esempio
+function convertInMinuteAndSeconds(seconds) {
+  let minutes = Math.floor(seconds / 60);
+  let remainingSeconds = seconds % 60;
+
+  return `${minutes}:${remainingSeconds}`;
+}
+
+const tempoPiccolo = 342;
+const minutiCanzone = convertInMinuteAndSeconds(tempoPiccolo);
+console.log("per canzone:", minutiCanzone);
 
 // TODO? gestione errori search:
 /*
