@@ -3,6 +3,7 @@ const URL_PROXY_StriveSchool =
   "https://striveschool-api.herokuapp.com/api/deezer/artist";
 const API_KEY_Rapid_Api = "1c9a44634bmshc420986a1ca9d4bp149ee4jsn6c74b6ea3e35";
 const API_KEY_Gaetano = "cd5ce390cbmsh8338260badec5d5p1d8d07jsnaf615db6cd16";
+const API_KEY_Altra = "c47b2ad3bdmshc757bf49d438d40p117580jsna7bb59d8b09b";
 const BEARER_API_KEY_Gaetano =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTcxZmYzNDBkOGEyMDAwMThhNDhiNDQiLCJpYXQiOjE3MDE5Njk3MTYsImV4cCI6MTcwMzE3OTMxNn0.5_oa--6z6w4Aq79-5uXNafYJq213OKyZCsAYn0F3d_Q";
 
@@ -18,7 +19,7 @@ const search = "search";
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": API_KEY_Gaetano,
+    "X-RapidAPI-Key": API_KEY_Altra,
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
   },
 };
@@ -333,13 +334,13 @@ export async function searchData(data) {
       id: artistId,
       picture_medium,
     },
-    album: { title: titleAlbum, type: typeAlbum, cover_medium },
+    album: { title: titleAlbum, type: typeAlbum, cover_medium, id: albumId },
   } = songList[0];
 
   const searchPotentialResultsArr = [
-    { typeTrack, titleTrack, cover_medium },
-    { typeArtist, nameArtist, artistId, picture_medium },
-    { titleAlbum, typeAlbum, cover_medium },
+    { typeTrack, titleTrack, cover_medium, artistId, albumId, nameArtist },
+    { typeArtist, nameArtist, artistId, albumId, picture_medium },
+    { titleAlbum, typeAlbum, cover_medium, albumId, artistId, nameArtist },
   ];
 
   const regExp = new RegExp(data, "i");

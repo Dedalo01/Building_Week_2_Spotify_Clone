@@ -604,55 +604,110 @@ async function renderSearchPageResults(inputValue) {
   const searchResult = await searchData(inputValue);
   console.log(searchResult);
 
-  let img, name, nameTrack, type;
+  let img, name, nameTrack, type, artistName, relevantResultBox;
   if (searchResult.mostRelevantResult.typeArtist) {
     img = searchResult.mostRelevantResult.picture_medium;
     name = searchResult.mostRelevantResult.nameArtist;
     type = searchResult.mostRelevantResult.typeArtist;
+
+    relevantResultBox = `
+<div class="d-none d-md-flex mt-3 flex-column border-radius p-3 margin-left size div-change-color">
+<div class="margin-card">
+    <div >
+        <img src="${img}" alt="pic" width="150px" class="rounded-circle" >
+    </div>
+</div>
+<div class="margin-card">
+    <h1><a href="./artist.html?id=${searchResult.mostRelevantResult.artistId}">${name}</a></h1>
+</div>
+<div class="d-flex margin-card align-items-baseline">
+    
+    <div class="ms-3 bg-black border-radius p-2">
+        <div>
+            <p class="mb-0">${type}</p>
+        </div>
+    </div>
+</div>
+</div>
+`;
   } else if (searchResult.mostRelevantResult.typeAlbum) {
     img = searchResult.mostRelevantResult.cover_medium;
     name = searchResult.mostRelevantResult.titleAlbum;
     type = searchResult.mostRelevantResult.typeAlbum;
+    artistName = searchResult.mostRelevantResult.nameArtist;
+
+    relevantResultBox = `
+    <div class="d-none d-md-flex mt-3 flex-column border-radius p-3 margin-left size div-change-color">
+    <div class="margin-card">
+        <div>
+            <img src="${img}" alt="pic" width="150px" class="rounded">
+        </div>
+    </div>
+    <div class="margin-card">
+       <h1> <a href="./album?id=${searchResult.mostRelevantResult.albumId}">${name}</a></h1>
+    </div>
+    <div class="d-flex margin-card align-items-baseline">
+        <div>
+            <div class="d-flex">
+               
+                <a href="./artist.html?id=${searchResult.mostRelevantResult.artistId}">${nameArtist}</a>
+            </div>
+        </div>
+        <div class="ms-3 bg-black border-radius p-2">
+            <div>
+                <p class="mb-0">${type}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    `;
   } else {
     img = searchResult.mostRelevantResult.cover_medium;
     name = searchResult.mostRelevantResult.nameArtist;
     type = searchResult.mostRelevantResult.typeTrack;
     nameTrack = searchResult.mostRelevantResult.titleTrack;
+    artistName = searchResult.mostRelevantResult.nameArtist;
+    relevantResultBox = `
+    <div class="d-none d-md-flex mt-3 flex-column border-radius p-3 margin-left size div-change-color">
+    <div class="margin-card">
+        <div>
+            <img src="${img}" alt="pic" width="150px" class="rounded">
+        </div>
+    </div>
+    <div class="margin-card">
+        <h1><a href="./artist.html?id=${searchResult.mostRelevantResult.artistId}">${nameTrack}</a></h1>
+    </div>
+    <div class="d-flex margin-card align-items-baseline">
+        <div>
+            <div class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-explicit" viewBox="0 0 16 16">
+                    <path d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z" />
+                    <path
+                        d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z" />
+                </svg>
+                <a href="./artist.html?id=${searchResult.mostRelevantResult.artistId}">${artistName}</a>
+            </div>
+        </div>
+        <div class="ms-3 bg-black border-radius p-2">
+            <div>
+                <p class="mb-0">${type}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    `;
   }
 
+  // dynamic relevant results
   const relevantResults = `<div class="d-none d-md-flex align-items-center">
 <div class="d-flex justify-content-between flex-column size">
     <div class="margin-left">
         <h1>Risultato piu' rilevante</h1>
     </div>
-    <div class="d-none d-md-flex mt-3 flex-column border-radius p-3 margin-left size div-change-color">
-        <div class="margin-card">
-            <div>
-                <img src="${img}" alt="pic" width="150px" class="rounded">
-            </div>
-        </div>
-        <div class="margin-card">
-            <a href="#">${name}</a>
-        </div>
-        <div class="d-flex margin-card align-items-baseline">
-            <div>
-                <div class="d-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-explicit" viewBox="0 0 16 16">
-                        <path d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z" />
-                        <path
-                            d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z" />
-                    </svg>
-                    <a href="#">${name}</a>
-                </div>
-            </div>
-            <div class="ms-3 bg-black border-radius p-2">
-                <div>
-                    <p class="mb-0">${type}</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+        ${relevantResultBox}
+  
 </div>
 <div class="size mx-5">
     <div class="d-flex flex-column">
@@ -795,5 +850,42 @@ async function renderSearchPageResults(inputValue) {
 </div>
 </div>`;
 
-  dynamicSearchDiv.innerHTML = filterBar + relevantResults;
+  // artist row
+  const artistRow = `<div class="ms-4 d-none d-md-block">
+<p class="fw-bold ms-4 mb-3 margin-top font-size-high">Artisti</p>
+<div class=" fan row mt-1">
+    
+
+</div>
+</div>`;
+
+  let artistRowStart = `<div class="ms-4 d-none d-md-block">
+<p class="fw-bold ms-4 mb-3 margin-top font-size-high">Artisti</p>
+<div class=" fan row mt-1">`;
+
+  const artistRowEnd = `</div>
+</div>`;
+
+  // remove duplicates from similaRtistList
+  const newSimilarArtistList = 0;
+
+  for (let i = 0; i < 5; i++) {
+    const similarArtist = searchResult.similarArtistList[i];
+
+    const artistCard = `<div class="under card col-5 me-4 ms-4 col-md-2 mb-2 div-change-color">
+<img src="${similarArtist.covers[1]}" class="card-img-top" alt="...">
+<div class="card-body">
+    <h5 class="card-title">${similarArtist.name}</h5>
+   
+</div>
+</div>`;
+
+    artistRowStart += artistCard;
+    if (i == 4) {
+      artistRowStart += artistRowEnd;
+    }
+  }
+
+  // add everything to div
+  dynamicSearchDiv.innerHTML = filterBar + relevantResults + artistRowStart;
 }
