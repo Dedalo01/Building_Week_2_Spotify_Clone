@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="././assets/css/animate.min.css">
     <link rel="stylesheet" href="././assets/css/logo.css">
     <link rel="stylesheet" href="././assets/css/untitled.css">
+
+    <script src="././assets/bootstrap/js/bootstrap.min.js" defer></script>
+    <script type="module" src="./assets/js/album.js"></script>
 </head>
 
 <body>
@@ -46,11 +49,11 @@
                         </path>
                     </svg><span class="ms-xl-2 ms-lg-3 mb-lg-0">Crea la tua playlist</span></div>
                 <div class="d-flex align-items-center mb-lg-2"><img class="img-fluid ms-xl-0 ms-lg-0"
-                        src="./assets/img/7e97f477e8f5202cca770cd994274ac1.jpg" width="20" height="17"><span
-                        class="ms-xl-2 ms-lg-3 mb-lg-0">Brani che ti piacciono</span></div>
+                        src="./assets/imgs/cuore.jpg" width="20" height="17"><span class="ms-xl-2 ms-lg-3 mb-lg-0">Brani
+                        che ti piacciono</span></div>
                 <div class="d-flex align-items-center"><img class="img-fluid ms-lg-0 me-lg-0"
-                        src="./assets/img/Screenshot%202023-12-13%20093804.png" width="23" height="23"><span
-                        class="ms-xl-2 ms-lg-3 mb-lg-0">I tuoi episodi</span></div>
+                        src="./assets/imgs/bookmark.png" width="23" height="23"><span class="ms-xl-2 ms-lg-3 mb-lg-0">I
+                        tuoi episodi</span></div>
             </div>
             <hr class="ps-lg-0 pe-xl-0 ms-xl-0 me-xl-1">
             <div class="d-flex flex-column scrollbox-1"><a class="link-light playlist mb-xl-3 mb-lg-3" href="#">Canzoni
@@ -113,24 +116,28 @@
                     <div class="text-center"><img class="img-fluid shadow-lg ms-xl-0 ps-md-0 ms-md-1 mt-4 mt-md-0"
                             src="./assets/img/17311054_593721197499056_7691838617701452763_o.jpg" width="139"
                             height="139"></div>
-                    <div class="d-flex flex-column align-self-center ms-xl-3 pt-xl-3 pb-xl-0 ms-lg-2 ms-md-2"><span
-                            class="fw-bold ms-md-0 d-none d-lg-inline">ALBUM</span>
-                        <h1
+                    <div class="d-flex flex-column align-self-center ms-xl-3 pt-xl-3 pb-xl-0 ms-lg-2 ms-md-2">
+                        <span class="fw-bold ms-md-0 d-none d-lg-inline">ALBUM</span>
+                        <h1 id="hero-text"
                             class="fs-1 fw-bold pe-xl-0 mt-xl-1 mb-xl-4 pt-md-0 mt-md-1 mt-lg-0 ms-md-0 ms-sm-3 ms-3 mt-3 ps-3">
                             Gioventu' brucata</h1>
-                        <div class="ms-xl-1 ms-sm-3 ms-3 ps-3"><img
-                                class="rounded-circle img-fluid ps-xl-0 me-xl-1 pb-xl-0 ms-lg-0 me-md-3 me-sm-2 me-2"
+                        <div id="hero-info" class="ms-xl-1 ms-sm-3 ms-3 ps-3">
+                            <img class="rounded-circle img-fluid ps-xl-0 me-xl-1 pb-xl-0 ms-lg-0 me-md-3 me-sm-2 me-2"
                                 src="./assets/img/17311054_593721197499056_7691838617701452763_o.jpg" width="22"
-                                height="22"><span class="fw-semibold">Pinguini Tattici Nucleari&nbsp;</span><svg
+                                height="22">
+                            <span class="fw-semibold">Pinguini Tattici Nucleari&nbsp;</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-dot d-none d-lg-inline">
+                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+                            </svg>
+                            <span id="release-year" class="d-none d-lg-inline">2017</span><svg
                                 xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                                 viewBox="0 0 16 16" class="bi bi-dot d-none d-lg-inline">
                                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
-                            </svg><span class="d-none d-lg-inline">2017</span><svg xmlns="http://www.w3.org/2000/svg"
-                                width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
-                                class="bi bi-dot d-none d-lg-inline">
-                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
-                            </svg><span class="d-none d-lg-inline">12 brani,</span><span
-                                class="fw-light d-none d-lg-inline">&nbsp;53 min 20 sec.</span></div>
+                            </svg>
+                            <span id="number-tracks" class="d-none d-lg-inline">12 brani,</span><span
+                                class="fw-light d-none d-lg-inline">&nbsp;53 min 20 sec.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -168,39 +175,46 @@
                     </svg><span>2017</span></div>
                 <div
                     class="d-flex justify-content-between align-items-center d-lg-none mb-md-4 mt-md-3 ms-md-4 me-md-4 ms-2 mb-3 mt-2 ps-sm-3 pe-sm-4 ps-3 pe-2 ps-md-1 pe-md-0">
-                    <div class="ms-sm-0"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                            fill="currentColor" viewBox="0 0 16 16" class="bi bi-heart pe-sm-0 me-sm-3 me-3"
-                            style="font-size: 20px;">
+                    <div class="ms-sm-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                            viewBox="0 0 16 16" class="bi bi-heart pe-sm-0 me-sm-3 me-3" style="font-size: 20px;">
                             <path
                                 d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
                             </path>
-                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                             viewBox="0 0 16 16" class="bi bi-arrow-down border rounded-circle me-sm-3 me-3"
                             style="font-size: 20px;">
                             <path fill-rule="evenodd"
                                 d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z">
                             </path>
-                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
-                            fill="none" style="font-size: 20px;" class="me-sm-3">
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+                            style="font-size: 20px;" class="me-sm-3">
 
                             <path
                                 d="M12 5L12 5.01M12 12L12 12.01M12 19L12 19.01M12 6C11.4477 6 11 5.55228 11 5C11 4.44772 11.4477 4 12 4C12.5523 4 13 4.44772 13 5C13 5.55228 12.5523 6 12 6ZM12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13ZM12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18C12.5523 18 13 18.4477 13 19C13 19.5523 12.5523 20 12 20Z"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             </path>
-                        </svg></div>
-                    <div><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em"
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em"
                             fill="currentColor" style="font-size: 28px;" class="me-sm-3 me-3">
                             <path d="M0 0h24v24H0V0z" fill="none"></path>
                             <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"></path>
-                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                             viewBox="0 0 16 16"
                             class="bi bi-play-fill bg-success border rounded-circle border-0 pe-sm-1 ps-sm-1"
                             data-bss-hover-animate="pulse" style="font-size: 38px;">
                             <path
                                 d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z">
                             </path>
-                        </svg></div>
+                        </svg>
+                    </div>
                 </div>
+                <!-- headers -->
                 <div class="row pe-xl-0 ps-xl-0 mt-xl-4 ms-xl-4 ps-lg-0 mt-lg-3 ms-lg-0 d-lg-flex d-none">
                     <div class="col-auto d-flex align-items-center"><span>#</span></div>
                     <div
@@ -218,229 +232,280 @@
                         </svg></div>
                 </div>
                 <hr class="ms-xl-3 me-xl-3 mt-xl-2 d-none d-lg-block">
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
-                </div>
-                <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
-                    <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
-                    <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
-                            class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
-                            Nucleari</span></div>
-                    <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                            viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none" style="font-size: 22px;">
-                            <path
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                            </path>
-                        </svg><span class="d-none d-md-inline">694.578</span></div>
-                    <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span></div>
+                <!-- end of headers -->
+                <div id="track-rows-container">
+
+
+                    <!-- start row -->
+                    <!--       <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0">
+                            <span class="d-none d-md-inline">1</span>
+                        </div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0">
+                            <span class="fw-bold">GAE - gae</span>
+                            <span class="fw-light">PRova Gae</span>
+                        </div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end">
+                           mobile menu 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg>
+                            end of mobile menu 
+
+                            <span class="d-none d-md-inline">694.578</span>
+                        </div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline">
+                            <span>1:28</span>
+                        </div>
+                    </div> -->
+                    <!-- end row -->
+
+                    <!-- start row -->
+                    <!--      <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+                    <div class="row ms-xl-4 pe-xl-0 mt-xl-3 ps-xl-0 ms-lg-0 mb-lg-3 mb-md-3 mt-sm-0 mb-sm-3 mb-3">
+                        <div class="col-auto ms-md-0"><span class="d-none d-md-inline">1</span></div>
+                        <div class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-5 d-flex flex-column ps-xl-0 pe-xl-0"><span
+                                class="fw-bold">Montanelli - Intro</span><span class="fw-light">Pinguini Tattici
+                                Nucleari</span></div>
+                        <div class="col-5 col-sm-6 col-md-4 col-lg-4 col-xl-3 text-end"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-three-dots-vertical d-md-none"
+                                style="font-size: 22px;">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                </path>
+                            </svg><span class="d-none d-md-inline">694.578</span></div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 text-end pe-xl-5 d-none d-md-inline"><span>1:28</span>
+                        </div>
+                    </div>
+ -->
                 </div>
             </div>
         </div>
@@ -615,8 +680,8 @@
             </div>
         </div>
     </div>
-    <script src="././assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="././assets/js/bs-init.js"></script>
+
+
 </body>
 
 </html>

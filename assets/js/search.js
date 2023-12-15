@@ -872,7 +872,7 @@ async function renderSearchPageResults(inputValue) {
   );
   console.log(newSimilarArtistList);
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     const similarArtist = newSimilarArtistList[i];
 
     const artistCard = `<div class="under card col-5 me-4 ms-4 col-md-2 mb-2 div-change-color">
@@ -884,7 +884,7 @@ async function renderSearchPageResults(inputValue) {
 </div>`;
 
     artistRowStart += artistCard;
-    if (i == 4) {
+    if (i == 3) {
       artistRowStart += artistRowEnd;
     }
   }
@@ -918,7 +918,7 @@ async function renderSearchPageResults(inputValue) {
     const albumCard = `<div class="under card me-4 ms-4 col-md-2 mb-2 div-change-color">
     <img src="${similarAlbum.covers[1]}" class="card-img-top" alt="...">
     <div class="card-body">
-    <h5 class="card-title"><a href="${similarAlbum.id}">${similarAlbum.name}</a></h5>
+    <h5 class="card-title"><a href="${similarAlbum.id}">${similarAlbum.title}</a></h5>
         
     </div>
     </div>`;

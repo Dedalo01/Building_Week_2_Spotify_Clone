@@ -8,6 +8,10 @@ import {
   convertInMinuteAndSeconds,
 } from "./script.js";
 
+let params = new URLSearchParams(window.location.search);
+
+let id = params.get("id");
+
 async function renderArtistHero(artistID) {
   const artistData = await getArtistData(artistID);
   console.log("artist data", artistData);
@@ -69,5 +73,7 @@ async function renderTracksArtist(artistID) {
   console.log(tracksRows);
 }
 
-renderArtistHero(1690105);
-renderTracksArtist(1690105);
+if (id) {
+  renderArtistHero(id);
+  renderTracksArtist(id);
+}
