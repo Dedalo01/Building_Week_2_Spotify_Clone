@@ -112,10 +112,6 @@ async function renderPreferredArtistRow() {
   artistsRowContainer.innerHTML = artistsHtml;
 }
 
-/* function renderAlbumRow() {
-  const 
-} */
-
-//renderContainerAd(314276);
-//renderPreferredAlbumRow();
-//renderPreferredArtistRow();
+renderContainerAd(314276);
+renderPreferredAlbumRow();
+renderPreferredArtistRow();
