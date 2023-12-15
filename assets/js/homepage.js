@@ -33,7 +33,7 @@ async function renderContainerAd(artistID) {
       <p>${name}</p>
       <p>Ascolta il nuovo singolo di "${name}"</p>
       <div class="d-flex align-items-center">
-        <button type="button" class="btn me-3 fw-bold btnCustom btnPlay">Play</button>
+        <a href="./album.html?id=${id}" type="button" class="btn me-3 fw-bold btnCustom btnPlay">Play</a>
         <button type="button" class="btn btn-outline-light border-secondary fw-bold me-3 btnCustom">Salva</button>
         <div class="iconWrapper">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6c757d" class="bi bi-three-dots"
