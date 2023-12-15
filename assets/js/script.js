@@ -19,7 +19,7 @@ const search = "search";
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": API_KEY_Altra,
+    "X-RapidAPI-Key": API_KEY_Gaetano,
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
   },
 };

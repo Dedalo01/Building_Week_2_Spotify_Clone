@@ -1,0 +1,133 @@
+.scrollbox-1 {
+  height: 480px;
+  color: var(--mdb-surface-bg);
+  overflow-y: scroll;
+  --sb-track-color: var(--mdb-datepicker-backdrop-background-color);
+  --sb-thumb-color: var(--bs-gray-800);
+  --sb-size: 10px;
+  overflow-x: hidden;
+}
+
+@media (min-width: 1400px) {
+  .scrollbox-1 {
+    /*height: 440px;*/
+  }
+}
+
+.scrollbox-1::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.scrollbox-1::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+.scrollbox-1::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #181919;
+}
+
+span {
+  font-size: 10px;
+}
+
+.scrollbox-2 {
+  color: var(--mdb-surface-bg);
+  overflow-y: scroll;
+  --sb-track-color: var(--bs-gray-900);
+  --sb-thumb-color: var(--bs-gray-800);
+  --sb-size: 10px;
+  background: linear-gradient(0deg, var(--bs-emphasis-color) 17%, var(--bs-emphasis-color) 25%, rgb(205,180,47) 100%), linear-gradient(178deg, var(--bs-emphasis-color) 5%, var(--bs-emphasis-color) 61%), var(--bs-focus-ring-color);
+  overflow-x: hidden;
+  height: 816px;
+}
+
+@media (max-width: 768px) {
+  .scrollbox-2 {
+    height: 100%;
+    overflow-y: hidden;
+  }
+}
+
+.scrollbox-2::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+@media (max-width: 768px) {
+  .scrollbox-2::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.scrollbox-2::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  /*border-radius: 10px;*/
+}
+
+.scrollbox-2::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.playlist {
+  font-size: 0.8rem;
+}
+
+h1 {
+  /*font-size: 3.5rem;*/
+}
+
+#container-list {
+  background: linear-gradient(0deg, #1f1e1e 10%, var(--bs-border-color-translucent) 93%);
+}
+
+#container-footer {
+  background-color: var(--bs-body-color);
+}
+
+@media (min-width: 992px) {
+  #container-album {
+    display: flex;
+  }
+}
+
+.footer-player-mobile {
+  border-radius: 6px;
+}
+
+#horizontal-scrolling-container {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 35%;
+}
+
+#horizontal-scrolling-items {
+  animation: infiniteScroll 5s linear infinite;
+}
+
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(140%);
+  }
+  to {
+    transform: translateX(-140%);
+  }
+}
+
+html {
+  /*overflow-x: hidden;*/
+}
+

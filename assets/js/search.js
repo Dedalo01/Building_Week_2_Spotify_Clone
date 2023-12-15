@@ -851,13 +851,13 @@ async function renderSearchPageResults(inputValue) {
 </div>`;
 
   // artist row
-  const artistRow = `<div class="ms-4 d-none d-md-block">
+  /*   const artistRow = `<div class="ms-4 d-none d-md-block">
 <p class="fw-bold ms-4 mb-3 margin-top font-size-high">Artisti</p>
 <div class=" fan row mt-1">
     
 
 </div>
-</div>`;
+</div>`; */
 
   let artistRowStart = `<div class="ms-4 d-none d-md-block">
 <p class="fw-bold ms-4 mb-3 margin-top font-size-high">Artisti</p>
@@ -867,15 +867,18 @@ async function renderSearchPageResults(inputValue) {
 </div>`;
 
   // remove duplicates from similaRtistList
-  const newSimilarArtistList = 0;
+  const newSimilarArtistList = searchResult.similarArtistList.filter(
+    (artist, index) => searchResult.similarArtistList.indexOf(artist) === index
+  );
+  console.log(newSimilarArtistList);
 
   for (let i = 0; i < 5; i++) {
-    const similarArtist = searchResult.similarArtistList[i];
+    const similarArtist = newSimilarArtistList[i];
 
     const artistCard = `<div class="under card col-5 me-4 ms-4 col-md-2 mb-2 div-change-color">
 <img src="${similarArtist.covers[1]}" class="card-img-top" alt="...">
 <div class="card-body">
-    <h5 class="card-title">${similarArtist.name}</h5>
+<h5 class="card-title"><a href="${similarArtist.id}">${similarArtist.name}</a></h5>
    
 </div>
 </div>`;
@@ -886,6 +889,47 @@ async function renderSearchPageResults(inputValue) {
     }
   }
 
+  let albumRowStart = `<div class="ms-4 d-none d-md-block margin-bottom">
+  <div>
+      <p class="fw-bold ms-4 mb-3 margin-top font-size-high">Album</p>
+      <div class="row align-items-center">`;
+
+  const albumRowEnd = `</div>
+</div>
+</div>`;
+  /* const albumCard = `<div class="under card me-4 ms-4 col-md-2 mb-2 div-change-color">
+<img src="${similarAlbum.covers[1]}" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title"><a href="${similarAlbum.id}">${similarAlbum.name}</a></h5>
+    
+</div>
+</div>` */
+
+  //remove duplicates for similarAlbum
+  // FIX FILTRO PER ELIMINARE ALTRI DIFFERENTI
+  const newSimilarAlbumList = searchResult.similarAlbumList.filter(
+    (album, index) => searchResult.similarAlbumList.indexOf(album) === index
+  );
+  console.log(newSimilarAlbumList);
+
+  for (let i = 0; i < 5; i++) {
+    const similarAlbum = newSimilarAlbumList[i];
+
+    const albumCard = `<div class="under card me-4 ms-4 col-md-2 mb-2 div-change-color">
+    <img src="${similarAlbum.covers[1]}" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title"><a href="${similarAlbum.id}">${similarAlbum.name}</a></h5>
+        
+    </div>
+    </div>`;
+
+    albumRowStart += albumCard;
+    if (i == 4) {
+      albumRowStart += albumRowEnd;
+    }
+  }
+
   // add everything to div
-  dynamicSearchDiv.innerHTML = filterBar + relevantResults + artistRowStart;
+  dynamicSearchDiv.innerHTML =
+    filterBar + relevantResults + artistRowStart + albumRowStart;
 }
