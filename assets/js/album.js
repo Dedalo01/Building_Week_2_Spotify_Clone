@@ -32,7 +32,8 @@ async function renderAlbumPage(albumID) {
   heroInfoImg.src = albumData.artist.pictures[0];
 
   // TODO: da fare GAE!
-  const heroArtistName = document.querySelector("#s");
+  const heroArtistName = document.querySelector("#hero-name");
+  heroArtistName.innerText = albumData.artist.name;
 
   const year = albumData.release_date.split("-")[0];
   const heroInfoReleaseDate = document.querySelector("#release-year");
