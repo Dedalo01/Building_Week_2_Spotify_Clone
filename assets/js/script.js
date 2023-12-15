@@ -52,7 +52,7 @@ const albumPavarotti = 229744;
 const playlistAllenamentiCasa = 12109987971;
 
 // aggiungi anche api track prime 10 canzoni
-async function getArtistTracklist(artistId, limitSongs) {
+export async function getArtistTracklist(artistId, limitSongs) {
   const artistTrackList = [];
   const proxyUrl = `${URL_PROXY_StriveSchool}/${artistId}/top?limit=${limitSongs}`;
   let artistTracklistData;
@@ -104,7 +104,7 @@ async function getArtistTracklist(artistId, limitSongs) {
 }
 
 //TODO: prendi dati per pagina artista e mostrali
-async function getArtistData(artistId) {
+export async function getArtistData(artistId) {
   const artistData = await loadData(URL_Rapid_Api, getArtist, artistId);
 
   const { name, picture_small, picture_medium, picture_big, nb_fan } =
@@ -119,7 +119,7 @@ async function getArtistData(artistId) {
 }
 
 //TODO: prendi dati per pagina album e mostrali
-async function getAlbumData(albumId) {
+export async function getAlbumData(albumId) {
   const albumData = await loadData(URL_Rapid_Api, getAlbum, albumId);
 
   const {
@@ -208,7 +208,7 @@ async function getAlbumData(albumId) {
 //TODO: prendi dati per pagina playlist e mostrali
 
 //TODO: prendi dati per pagina home e mostrali
-async function getPlaylistData(playlistId) {
+export async function getPlaylistData(playlistId) {
   const playlistData = await loadData(URL_Rapid_Api, getPlaylsit, playlistId);
 
   const {
@@ -314,10 +314,9 @@ function createTracklistArray(tracks) {
 //getAlbumData(albumPavarotti);
 //const prova = await getPlaylistData(playlistAllenamentiCasa); // funziona grazie a type = module nello script
 
-async function searchData(data) {
+export async function searchData(data) {
   const searchData = await loadData(URL_Rapid_Api, search, data);
   console.log("searchData", searchData);
-  /*  const searchArr = [] */
   const similarAlbumList = [];
   const similarArtistList = [];
 
@@ -328,22 +327,25 @@ async function searchData(data) {
   const {
     type: typeTrack,
     title: titleTrack,
-    artist: { name: nameArtist, type: typeArtist, id: artistId },
-    album: { title: titleAlbum, type: typeAlbum },
+    artist: {
+      name: nameArtist,
+      type: typeArtist,
+      id: artistId,
+      picture_medium,
+    },
+    album: { title: titleAlbum, type: typeAlbum, cover_medium },
   } = songList[0];
 
   const searchPotentialResultsArr = [
-    { typeTrack, titleTrack },
-    { typeArtist, nameArtist, artistId },
-    { titleAlbum, typeAlbum },
+    { typeTrack, titleTrack, cover_medium },
+    { typeArtist, nameArtist, artistId, picture_medium },
+    { titleAlbum, typeAlbum, cover_medium },
   ];
 
   const regExp = new RegExp(data, "i");
   console.log(regExp);
   let mostRelevantResult;
-  /*  console.log(titleTrack.test(regex));
-  console.log(nameArtist.test(regex));
-  console.log(titleAlbum.test(regex)); */
+
   if (regExp.test(titleTrack)) {
     mostRelevantResult = searchPotentialResultsArr[0];
   } else if (regExp.test(nameArtist)) {
@@ -354,6 +356,7 @@ async function searchData(data) {
 
   console.log("Most Relevant Result", mostRelevantResult);
 
+  // brani section
   const tracklist = getRelevantTracks(songList, mostRelevantResult);
   console.log("tracklist", tracklist);
   // controlla se togliere primo elemento invece di fare if ogni ciclo (slice) ASPETTA A FARE SLiCE
@@ -370,6 +373,14 @@ async function searchData(data) {
 
   console.log("similar album list", similarAlbumList);
   console.log("similar artist list", similarArtistList);
+  //TODO mettere return a search quando mi arriva la page html
+
+  return {
+    mostRelevantResult,
+    similarAlbumList,
+    similarArtistList,
+    tracklist,
+  };
 }
 
 // helper function
@@ -433,38 +444,12 @@ function getRelevantTracks(trackList, relevantResult) {
       relevantTrackList.push(actualTrack);
     }
   }
-  /* else if (relevantResult.nameArtist) {
-    for (let i = 0; i < 4; i++) {
-      const { id, name, picture_small, picture_medium } = trackList[i].artist;
-
-      const actualTrack = {
-        id,
-        name,
-        pictures: { picture_small, picture_medium },
-      };
-
-      relevantTrackList.push(actualTrack);
-    }
-  } else if (relevantResult.titleAlbum) {
-    for (let i = 0; i < 4; i++) {
-      const { id, title, cover_small, cover_medium } = trackList[i].album;
-
-      const actualTrack = {
-        id,
-        title,
-        covers: { cover_small, cover_medium },
-      };
-
-      relevantTrackList.push(actualTrack);
-    }
-  } */
 
   return relevantTrackList;
 }
-// TODO: funzione per convertire tempo in secondi, minuti, ore, giorni 45849538 / 60 / 60 /60 /60
-// return stringa già composta per pagina artista? album?
-// return "1 g 2 h 40 min" (forse giorno è eccessivo)
-function convertInHourMinuteSecond(seconds) {
+
+// helper function for songs and artist time formatting
+export function convertInHourMinuteSecond(seconds) {
   let totalSeconds = seconds;
   const HOUR_TOTAL_MINUTES = 3600;
   const MINUTE_TOTAL_SECONDS = 60;
@@ -493,20 +478,20 @@ function convertInHourMinuteSecond(seconds) {
   return finalStr;
 }
 
-const tempo = 3600;
+/* const tempo = 3600;
 const oreMinuti = convertInHourMinuteSecond(tempo);
-console.log(oreMinuti);
+console.log(oreMinuti); */
 // TODO: stessa roba per brani, solo che in formato 3:12 esempio
-function convertInMinuteAndSeconds(seconds) {
+export function convertInMinuteAndSeconds(seconds) {
   let minutes = Math.floor(seconds / 60);
   let remainingSeconds = seconds % 60;
 
   return `${minutes}:${remainingSeconds}`;
 }
 
-const tempoPiccolo = 342;
+/* const tempoPiccolo = 342;
 const minutiCanzone = convertInMinuteAndSeconds(tempoPiccolo);
-console.log("per canzone:", minutiCanzone);
+console.log("per canzone:", minutiCanzone); */
 
 // TODO? gestione errori search:
 /*

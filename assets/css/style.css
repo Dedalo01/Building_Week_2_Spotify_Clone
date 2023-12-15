@@ -1,5 +1,124 @@
 body {
-  font-family: "Circular", sans-serif;
   background-color: black;
-  color: wheat;
+  color: white;
+  font-family: "Circular", sans-serif;
+}
+.bg-color-red {
+  background-color: red;
+}
+.bg-color-lblue {
+  background-color: lightblue;
+}
+.bg-color-pink {
+  background-color: palevioletred;
+}
+.bg-color-green {
+  background-color: green;
+}
+.bg-color-orange {
+  background-color: orange;
+}
+.bg-color-violet {
+  background-color: violet;
+}
+.bg-color-brown {
+  background-color: brown;
+}
+.bg-color-blue {
+  background-color: blue;
+}
+div > p {
+  margin: 7% 5%;
+}
+.position-fixed {
+  position: fixed;
+  top: 717px;
+  width: 100%;
+}
+.click:hover {
+  cursor: pointer;
+}
+.zoom:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+.zoom2:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+.focus:hover {
+  outline: 1px solid white;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+@media screen and (min-width: 300px) {
+  .hidden {
+    overflow: hidden;
+    height: 100px;
+    width: 150px;
+  }
+  .margin {
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+  .rotate-translate {
+    border-radius: 10px;
+    position: relative;
+    left: 70px;
+    top: 0;
+    transform: rotate(20deg);
+    width: 80px;
+  }
+  .class-padding-bottom {
+    padding-bottom: 55%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hidden {
+    overflow: hidden;
+    height: 310px;
+    width: 310px;
+  }
+  .margin {
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+  .rotate-translate {
+    position: relative;
+    left: 130px;
+    top: 30px;
+    transform: rotate(30deg);
+    width: 200px;
+  }
+  h2 {
+    margin-left: 5%;
+  }
+  .margin-left {
+    margin-left: 4%;
+  }
+  .class-padding-bottom {
+    padding-bottom: 5%;
+  }
+  div > p {
+    font-size: 1.5rem;
+  }
+}
+.horizontal-scrolling-container {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.horizontal-scrolling-items {
+  animation: infiniteScroll 5s linear infinite;
+}
+
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(140%);
+  }
+  to {
+    transform: translateX(-140%);
+  }
 }

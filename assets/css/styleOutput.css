@@ -1,0 +1,118 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Circular", sans-serif;
+}
+.position-fixed {
+  position: fixed;
+  top: 717px;
+  width: 100%;
+}
+.zoom2:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.focus:hover {
+  outline: 1px solid white;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+.pointer-cursor:hover {
+  cursor: pointer;
+}
+.border-radius {
+  border-radius: 20px;
+}
+.size {
+  width: 90%;
+}
+.margin-top {
+  margin-top: 5%;
+}
+.margin-bottom {
+  margin-bottom: 5%;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.div-change-color {
+  background-color: rgb(27, 26, 26);
+}
+.div-change-color:hover {
+  background-color: rgba(119, 119, 119, 0.486);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.div-song-change-color {
+  background-color: black;
+}
+.div-song-change-color:hover {
+  background-color: rgba(119, 119, 119, 0.486);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.font-size-high {
+  font-size: 1.8rem;
+}
+.under {
+  background-color: rgb(27, 26, 26);
+  cursor: pointer;
+}
+.under h5 {
+  color: white;
+  font-size: 0.9rem;
+}
+.under p {
+  color: white;
+  opacity: 0.5;
+  font-size: 0.7rem;
+}
+.under img {
+  width: 85%;
+  margin: auto;
+  margin-top: 1.3rem;
+}
+.fan img {
+  border-radius: 50%;
+}
+@media screen and (min-width: 400px) {
+  .margin-bottom-app {
+    margin-bottom: 43%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .margin-left {
+    margin-left: 4%;
+  }
+  .margin-left-header {
+    margin-left: 1%;
+  }
+  .margin-card {
+    margin-left: 7%;
+    margin-top: 3%;
+  }
+}
+.horizontal-scrolling-container {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.horizontal-scrolling-items {
+  animation: infiniteScroll 5s linear infinite;
+}
+
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(140%);
+  }
+  to {
+    transform: translateX(-140%);
+  }
+}

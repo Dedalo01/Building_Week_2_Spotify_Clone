@@ -1,0 +1,208 @@
+body {
+  background-color: #121212;
+  color: #fefefe;
+}
+
+main {
+  background-color: #202020;
+}
+
+#central {
+  margin-bottom: 400px;
+}
+
+h4:hover {
+  text-decoration: underline;
+}
+
+li:hover {
+  color: #1ed760;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.bi:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.iconWrapper {
+  position: relative;
+  margin-left: 10px;
+}
+
+.iconLabel {
+  display: none;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c2c2c;
+  color: #f2f2f2;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.iconWrapper:hover .iconLabel {
+  display: block;
+}
+
+.box {
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box img {
+  width: 50%;
+  height: 50%;
+}
+
+.boxOnlyMobile {
+  width: 230px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shadowBox {
+  box-shadow: 0 0 8px rgba(252, 241, 241, 0.5);
+}
+
+.boxOnlyMobile img {
+  width: 50%;
+  height: 50%;
+}
+
+.largerBox:hover {
+  cursor: pointer;
+}
+
+.customPlaylist {
+  background-color: #64616163;
+  transition: background-color 0.5s ease;
+}
+
+.customPlaylist:hover {
+  background-color: #cecece4b;
+  cursor: pointer;
+}
+
+.hiddenText {
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.roundedTopLeft {
+  border-radius: 8px 0px 0px 0px;
+}
+
+.roundedBottomLeft {
+  border-radius: 0px 0px 0px 8px;
+}
+
+.containerOnlyMobile {
+  background: linear-gradient(
+    to top left,
+    rgba(44, 44, 44, 1) 75%,
+    rgba(255, 255, 255, 0.5)
+  );
+  transition: background-size 0.5s ease;
+  background-size: 100% 100%;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.containerOnlyMobile:hover {
+  background-size: 200% 200%;
+}
+
+.btnCustom {
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btnPlay {
+  background-color: #1ed760;
+}
+
+.btnPlay:hover {
+  background-color: #1ed760;
+  color: white;
+}
+
+.btnSection {
+  border-radius: 20px;
+  background-color: #202020;
+  font-size: 0.7rem;
+}
+
+.btnSection:hover {
+  background-color: #202020;
+  color: #6c757d;
+  text-decoration: underline;
+}
+
+.containerAd {
+  background: linear-gradient(to top right, #121212 75%, #202020);
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.stickyCustom {
+  position: sticky;
+  top: 0;
+  background-color: #202020;
+  padding: 10px;
+}
+
+.card {
+  background-color: #2c2c2c;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+.card-img {
+  border-radius: 20px;
+}
+
+.card:hover {
+  background-color: #64616163;
+  cursor: pointer;
+}
+
+#imgAd {
+  width: 210px;
+}
+
+.sizeBoxPlaylist {
+  width: auto;
+  height: auto;
+}
+
+/* CSS matteo per album row e artist row */
+.under {
+  background-color: rgb(27, 26, 26);
+  cursor: pointer;
+}
+
+.under h5 {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.under p {
+  color: white;
+  opacity: 0.5;
+  font-size: 0.7rem;
+}
+
+.under img {
+  width: 80%;
+  margin: auto;
+  margin-top: 1.3rem;
+}

@@ -2,44 +2,559 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prova Fetch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./assets/css/circular-font.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <title>HomePage Spotify</title>
 
-    <script src="https://kit.fontawesome.com/7e6563e4a8.js" defer crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js" type="module"></script>
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="./assets/css/circular-font.css">
+  <link rel="stylesheet" href="./assets/css/homepage.css">
+  <!-- <link rel="stylesheet" href="./assets/css/artist.css"> -->
+
+  <!-- scripts -->
+  <script src="./assets/js/homepage.js" type="module"></script>
 </head>
 
 <body>
-    <h1>Prova</h1>
-    <p>Prova font</p>
-    <i class="fa-solid fa-user"></i>
-
-    <div id="album-page">
-        <!-- immagine da aggiungere poi come background e non elemento -->
-        <img src="" alt="album img" id="album-img">
-
-        <div id="album-hero">
-            <!-- dynamic artist name -->
-            <h2></h2>
-            <!-- dynamic followers -->
-            <p></p>
-        </div>
-
-        <div id="album-songs-container">
-            <h3>Popolari</h3>
-            <div id="album-songs">
-                <!-- dynamically add songs rows -->
-
+  <main>
+    <div id="central" class="container col-12 col-lg-8 col-xl-8">
+      <div class="p-3 d-flex justify-content-between containerAd d-none d-md-flex">
+        <div class="d-flex align-items-center">
+          <div>
+            <img src="assets/imgs/main/image-17.jpg" id="imgAd">
+          </div>
+          <div class="ms-3">
+            <p class="small fw-bold">ALBUM</p>
+            <h1 class="display-1 fw-bold">TITOLO</h1>
+            <p>Artista</p>
+            <p>Ascolta il nuovo singolo di "Artista"</p>
+            <div class="d-flex align-items-center">
+              <button type="button" class="btn me-3 fw-bold btnCustom btnPlay">Play</button>
+              <button type="button" class="btn btn-outline-light border-secondary fw-bold me-3 btnCustom">Salva</button>
+              <div class="iconWrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6c757d" class="bi bi-three-dots"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                </svg>
+                <div class="iconLabel">Opzioni</div>
+              </div>
             </div>
-            <p>visualizza altro</p>
+          </div>
         </div>
+        <div>
+          <button type="button" class="btn btn-outline-secondary btn-sm border-0 fw-bold btnSection" onclick="">NASCONDI
+            ANNUNCIO</button>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mt-3 pt-3 ps-3 pe-3">
+        <h3>Buonasera</h3>
+        <div class="d-flex me-4">
+          <div class="iconWrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f9f9f9"
+              class="bi bi-bell d-block d-sm-none" viewBox="0 0 16 16">
+              <path
+                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+            </svg>
+            <div class="iconLabel">Novità</div>
+          </div>
+          <div class="iconWrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f9f9f9"
+              class="bi bi-clock-history d-block d-sm-none ms-2 me-2" viewBox="0 0 16 16">
+              <path
+                d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483m.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535m-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z" />
+              <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z" />
+              <path
+                d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5" />
+            </svg>
+            <div class="iconLabel">Cronologia</div>
+          </div>
+          <div class="iconWrapper">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f9f9f9"
+                class="bi bi-gear d-block d-sm-none" viewBox="0 0 16 16">
+                <path
+                  d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                <path
+                  d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+              </svg>
+            </a>
+            <div class="iconLabel">Impostazioni</div>
+          </div>
+        </div>
+      </div>
+      <ul class="list-unstyled stickyCustom d-flex font-sm d-block d-sm-none">
+        <li class="ms-5 me-5 small">Musica</li>
+        <li class="me-5 small">Podcast e show</li>
+      </ul>
+      <section class="m-3">
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-3">
+            <div class="d-flex align-items-center rounded customPlaylist">
+              <div class="box">
+                <img src="assets/imgs/main/image-1.jpg" class="roundedTopLeft" alt="imgPlaylist">
+                <img src="assets/imgs/main/image-2.jpg" alt="imgPlaylist">
+                <img src="assets/imgs/main/image-3.jpg" class="roundedBottomLeft" alt="imgPlaylist">
+                <img src="assets/imgs/main/image-4.jpg" alt="imgPlaylist">
+              </div>
+              <h6 class="ms-2 hiddenText">Titolo playlist</h6>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-3">
+            <div class="d-flex align-items-center rounded customPlaylist">
+              <div class="box">
+                <img src="assets/imgs/main/image-5.jpg" class="roundedTopLeft" alt="imgPlaylist">
+                <img src="assets/imgs/main/image-6.jpg" alt="imgPlaylist">
+                <img src="assets/imgs/main/image-7.jpg" class="roundedBottomLeft" alt="imgPlaylist">
+                <img src="assets/imgs/main/image-8.jpg" alt="imgPlaylist">
+              </div>
+              <h6 class="ms-2 hiddenText">Titolo playlist</h6>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-3">
+            <div class="d-flex align-items-center rounded customPlaylist">
+              <img src="assets/imgs/main/image-9.jpg" width="100px" class="rounded-start" alt="imgPlaylist">
+              <h6 class="ms-2 hiddenText">Titolo playlist</h6>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-3">
+            <div class="d-flex align-items-center rounded customPlaylist">
+              <img src="assets/imgs/main/image-10.jpg" width="100px" class="rounded-start" alt="imgPlaylist">
+              <h6 class="ms-2 hiddenText">Titolo playlist</h6>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-3">
+            <div class="d-flex align-items-center rounded customPlaylist">
+              <img src="assets/imgs/main/image-11.jpg" width="100px" class="rounded-start" alt="imgPlaylist">
+              <h6 class="ms-2 hiddenText">Titolo playlist</h6>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-3">
+            <div class="d-flex align-items-center rounded customPlaylist">
+              <img src="assets/imgs/main/image-12.jpg" width="100px" class="rounded-start" alt="imgPlaylist">
+              <h6 class="ms-2 hiddenText">Titolo playlist</h6>
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#3e87e3"
+                class="bi bi-dot d-block d-sm-none" viewBox="0 0 16 16">
+                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d-block d-sm-none p-3">
+        <div class="container containerOnlyMobile mb-4 containerLargerBox">
+          <div class="d-flex largerBox">
+            <div class="boxOnlyMobile shadowBox">
+              <img src="assets/imgs/main/image-5.jpg" alt="imgPlaylist">
+              <img src="assets/imgs/main/image-6.jpg" alt="imgPlaylist">
+              <img src="assets/imgs/main/image-7.jpg" alt="imgPlaylist">
+              <img src="assets/imgs/main/image-8.jpg" alt="imgPlaylist">
+            </div>
+            <div class="ms-3">
+              <p class="text-secondary">Playlist</p>
+              <h6>Titolo Playlist</h6>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex">
+              <div>
+                <div class="iconWrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#6c757d"
+                    class="heartIconSwap bi bi-suit-heart-fill ms-2 me-4" viewBox="0 0 16 16" style="display: none;">
+                    <path
+                      d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
+                  </svg>
+                  <div class="iconLabel">Mi piace</div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#1ed760"
+                    class="heartIcon bi bi-suit-heart-fill ms-2 me-4" viewBox="0 0 16 16">
+                    <path
+                      d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1" />
+                  </svg>
+                  <div class="iconLabel">Non mi piace</div>
+                </div>
+              </div>
+              <div class="iconWrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#6c757d"
+                  class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                </svg>
+                <div class="iconLabel">Opzioni</div>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div>
+                <p class="text-secondary me-4">16 brani</p>
+              </div>
+              <div class="iconWrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#1b1b1b"
+                  class="bi bi-play-circle-fill bg-white rounded-circle me-2" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5" />
+                </svg>
+                <div class="iconLabel">Play</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container containerOnlyMobile">
+          <div class="d-flex largerBox">
+            <div class="shadowBox">
+              <img src="assets/imgs/main/image-18.jpg" alt="imgPlaylist" width="230px">
+            </div>
+            <div class="ms-3">
+              <p class="text-secondary">Playlist</p>
+              <h6>Titolo Playlist</h6>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex">
+              <div>
+                <div class="iconWrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#6c757d"
+                    class="heartIconSwap bi bi-suit-heart-fill ms-2 me-4" viewBox="0 0 16 16" style="display: none;">
+                    <path
+                      d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
+                  </svg>
+                  <div class="iconLabel">Mi piace</div>
+                </div>
+                <div class="iconWrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#1ed760"
+                    class="heartIcon bi bi-suit-heart-fill ms-2 me-4" viewBox="0 0 16 16">
+                    <path
+                      d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1" />
+                  </svg>
+                  <div class="iconLabel">Non mi piace</div>
+                </div>
+              </div>
+              <div class="iconWrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#6c757d"
+                  class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                </svg>
+                <div class="iconLabel">Opzioni</div>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div>
+                <p class="text-secondary me-4">16 brani</p>
+              </div>
+              <div class="iconWrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#1b1b1b"
+                  class="bi bi-play-circle-fill bg-white rounded-circle me-2" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5" />
+                </svg>
+                <div class="iconLabel">Play</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="d-none d-sm-block m-4">
+        <div class="d-flex justify-content-between">
+          <h4>I tuoi Album Preferiti</h4>
+          <button type="button" class="btn btn-outline-secondary btn-sm border-0 fw-bold btnSection">VISUALIZZA
+            TUTTO</button>
+        </div>
+        <!--   <div id="album-row" class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-19.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-15.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-none d-md-block">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-16.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-none d-lg-block">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-17.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-none d-xl-block">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-18.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-none d-xl-block">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-10.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
 
+        <!-- 
+        
+
+                <div class="under card col-5 me-4 ms-4 col-md-2 mb-2">
+            <img src="assets/imgs/search/image-13.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2020 • Album</p>
+            </div>
+          </div>
+          <div class="under card col-5 col-md-2 mb-2">
+            <img src="assets/imgs/search/image-14.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2018 • Singolo</p>
+            </div>
+          </div>
+          <div class="under card col-5 me-4 ms-4 col-md-2 mb-2">
+            <img src="assets/imgs/search/image-15.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2023 • Album</p>
+            </div>
+          </div>
+          <div class="under card col-5 col-md-2 mb-2">
+            <img src="assets/imgs/search/image-18.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2021 • Album</p>
+            </div>
+          </div>
+          <div class="under card col-5 me-4 ms-4 col-md-2 mb-2">
+            <img src="assets/imgs/search/image-20.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2017 • Singolo</p>
+            </div>
+          </div>
+          <div class="under card col-5 d-md-none col-md-2 mb-2">
+            <img src="assets/imgs/search/image-5.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2011 • Album</p>
+            </div>
+          </div>
+          <div class="under card col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4  me-1">
+            <img src="assets/imgs/search/image-13.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2020 • Album</p>
+            </div>
+          </div>
+          <div class="under card col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4  me-1">
+            <img src="assets/imgs/search/image-13.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2020 • Album</p>
+            </div>
+          </div>
+          <div class="under card col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4  me-1">
+            <img src="assets/imgs/search/image-13.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2020 • Album</p>
+            </div>
+          </div>
+          <div class="under card col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4  me-1">
+            <img src="assets/imgs/search/image-13.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2020 • Album</p>
+            </div>
+          </div>
+          <div class="under card col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4  me-1">
+            <img src="assets/imgs/search/image-13.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">2020 • Album</p>
+            </div>
+          </div>
+
+        </div> -->
+
+
+        <!-- soluzione delle 1.44 by francesco margotta -->
+        <section class="container">
+          <div class="row d-flex justify-content-around flex-nowrap">
+            <div class="col-6 col-sm-6 col-md-4 col-lg-2 sizeBoxPlaylist">
+              <div class="card border-0">
+                <img src="assets/imgs/main/image-18.jpg" class="card-img p-3" style="width: 200px" alt="imgPlaylist">
+                <div class="card-body">
+                  <h5 class="card-title">Titolo playlist</h5>
+                  <p class="card-text text-secondary"> Descrizione playlist</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-2 sizeBoxPlaylist">
+              <div class="card border-0">
+                <img src="assets/imgs/main/image-18.jpg" class="card-img p-3" style="width: 200px" alt="imgPlaylist">
+                <div class="card-body">
+                  <h5 class="card-title">Titolo playlist</h5>
+                  <p class="card-text text-secondary"> Descrizione playlist</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-2 d-none d-md-block sizeBoxPlaylist">
+              <div class="card border-0">
+                <img src="assets/imgs/main/image-18.jpg" class="card-img p-3" style="width: 200px" alt="imgPlaylist">
+                <div class="card-body">
+                  <h5 class="card-title">Titolo playlist</h5>
+                  <p class="card-text text-secondary"> Descrizione playlist</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 d-none d-lg-block sizeBoxPlaylist">
+              <div class="card border-0">
+                <img src="assets/imgs/main/image-18.jpg" class="card-img p-3" style="width: 200px" alt="imgPlaylist">
+                <div class="card-body">
+                  <h5 class="card-title">Titolo playlist</h5>
+                  <p class="card-text text-secondary"> Descrizione playlist</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-2 d-none d-xl-block sizeBoxPlaylist">
+              <div class="card border-0">
+                <img src="assets/imgs/main/image-18.jpg" class="card-img p-3" style="width: 200px" alt="imgPlaylist">
+                <div class="card-body">
+                  <h5 class="card-title">Titolo playlist</h5>
+                  <p class="card-text text-secondary"> Descrizione playlist</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="d-none d-sm-block m-4">
+        <div class="d-flex justify-content-between">
+          <h4>Altro di ciò che ti piace</h4>
+          <button type="button" class="btn btn-outline-secondary btn-sm border-0 fw-bold btnSection">VISUALIZZA
+            TUTTO</button>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-19.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-15.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-none d-md-block">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-16.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-none d-lg-block">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-17.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-none d-xl-block">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-18.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 d-none d-xl-block">
+            <div class="card border-0">
+              <img src="assets/imgs/main/image-10.jpg" class="card-img p-3" alt="imgPlaylist">
+              <div class="card-body">
+                <h5 class="card-title">Titolo playlist</h5>
+                <p class="card-text text-secondary"> Descrizione playlist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+    </div>
+  </main>
+  <script>
 
+    const heartIcons = document.querySelectorAll('.heartIcon');
+    const heartIconsSwap = document.querySelectorAll('.heartIconSwap');
+
+    heartIcons.forEach(function (heartIcon) {
+      heartIcon.addEventListener('click', function () {
+        // Tua logica per gestire il clic dell'icona qui
+
+        // Esempio: nascondi l'icona attuale
+        heartIcon.style.display = 'none';
+
+        // Mostra l'icona di swap corrispondente
+        // (supponendo che gli indici corrispondano tra heartIcons e heartIconsSwap)
+        const index = Array.from(heartIcons).indexOf(heartIcon);
+        heartIconsSwap[index].style.display = 'inline-block';
+      });
+    });
+
+    heartIconsSwap.forEach(function (heartIconSwap) {
+      heartIconSwap.addEventListener('click', function () {
+        // Tua logica per gestire il clic dell'icona di swap qui
+
+        // Esempio: nascondi l'icona di swap attuale
+        heartIconSwap.style.display = 'none';
+
+        // Mostra l'icona corrispondente
+        const index = Array.from(heartIconsSwap).indexOf(heartIconSwap);
+        heartIcons[index].style.display = 'inline-block';
+      });
+    });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

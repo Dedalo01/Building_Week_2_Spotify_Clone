@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+
+
+    <!-- stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/82df66859c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./assets/css/circular-font.css">
+    <link rel="stylesheet" href="./assets/css/artist.css">
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+
+    <script src="./assets/js/artist.js" type="module"></script>
+</head>
+
+<body>
+    <!--sinistra-->
+
+    <div class="container-fluid page-wrapper">
+        <div id="rowMain" class="row">
+            <div class="col-2 d-none d-md-none d-lg-block">
+
+                <div id="left" class="container-fluid d-block side-bar ">
+
+                    <button class="side-bar-text d-block f align-items-center">
+                        <i class="bi bi-three-dots fs-4"></i>
+
+                    </button>
+                    <div class="first-menu fs-6 ms-2 d-flex flex-column">
+                        <a href="#" class="my-1 side-bar-text d-block align-items-center">
+                            <i class="bi bi-house-door-fill fs-5"></i>
+                            Home
+                        </a>
+                        <a href="#" class="my- side-bar-text side-bar-search d-block" onclick=""> <!--JS-->
+                            <i class="bi bi-search fs-5"></i>
+                            Cerca
+                        </a>
+                        <a href="#" class="my-1 side-bar-text d-block ms-2">
+                            <strong class="library">||\</strong> La tua libreria
+                        </a>
+                        <div class="mt-5 ms-1">
+                            <div class="d-flex">
+                                <i id="newPl" class="fa-regular side-bar-text fa-square-plus fs-4 "></i>
+                                <a href="#" class="my-1 side-bar-text d-block mb-3 align-items-center">
+                                    Crea playlist
+                                </a>
+                            </div>
+                            <a href="#" class="my-1 side-bar-text d-block mb-3">
+                                <img id="cuore" src="assets/imgs/7e97f477e8f5202cca770cd994274ac1.jpg" alt="cuore">
+                                Brani che ti piacciono
+                            </a>
+                            <a href="#" class="my-1 side-bar-text d-block">
+                                <img id="segnalibro" src="assets/imgs/Screenshot_2023-12-13_093804.png"
+                                    alt="segnalibro">
+                                I tuoi episodi
+                            </a>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="custom-scrollbar d-flex flex-column ms-2">
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            early stage emily syndrome (sett-ott 2022)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Be The Young
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            "..."cit. Kimiko (lug-ago 2022)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            saggio vibes
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            main characters energy(mag-giu 2022)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            that fucking mood
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            VEE, CARLOTTA E GIACOMO VANNO A BOSIO
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            An Emily Winchester kind of mood
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            landing page(mar-apr 2022)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            2021 loll
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            cosa cazzo vuol dire questa affermazione (gen-fe...)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            honey and glass (nov-dic 2021)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            (Revenge) Training Arc
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Lidya -- Emily
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            minecraft e nintendo switch (sep-oct 2021)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            silvano d'orba? I hardly know her (lug-ago 2021)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Culo 2021
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Frah Quintale | Mix
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Francesco Guccini | Mix
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Gaetano - Domenico | Mix
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Andrea - Francesco | Mix
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Matteo stand alone | Mix
+                        </a>
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            early stage emily syndrome (sett-ott 2022)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Be The Young
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            "..."cit. Kimiko (lug-ago 2022)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            saggio vibes
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            main characters energy(mag-giu 2022)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            that fucking mood
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            VEE, CARLOTTA E GIACOMO VANNO A BOSIO
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            An Emily Winchester kind of mood
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            landing page(mar-apr 2022)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            2021 loll
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            cosa cazzo vuol dire questa affermazione (gen-fe...)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            honey and glass (nov-dic 2021)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            (Revenge) Training Arc
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Lidya -- Emily
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            minecraft e nintendo switch (sep-oct 2021)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            silvano d'orba? I hardly know her (lug-ago 2021)
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Culo 2021
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Frah Quintale | Mix
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Francesco Guccini | Mix
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Gaetano - Domenico | Mix
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Andrea - Francesco | Mix
+                        </a>
+
+                        <a href="#" class="my-2 side-bar-text text-start playlist">
+                            Matteo stand alone | Mix
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--centro-->
+
+            <div id="center" class="col-12 col-lg-8 d-flex flex-column custom-scrollbar">
+                <div id="container-center-main">
+                    <div class="d-flex justify-content-between mt-2">
+                        <div id="topMain" class="d-flex mt-2 ms-4">
+                            <i class="bi bi-chevron-left me-3 bg-black "></i>
+                            <i class="bi bi-chevron-right bg-black d-none d-md-block"></i>
+                        </div>
+                        <div class="dropdown">
+                            <div class="d-flex justify-content-end d-none d-lg-flex">
+                                <img id="accountIcon" src="assets/imgs/main/image-5.jpg" alt="account">
+                                <button id="account" class="btn btn-black text-light dropdown-toggle fw-bold"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Lidia Nautilus ...
+                                </button>
+                            </div>
+                            <ul class="dropdown-menu bg-black">
+                                <li><a class="dropdown-item text-light" href="#">Account</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Impostazioni</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Esci</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center ms-4">
+                        <img class="verified" src="assets/imgs/search/logoVerificato.png" alt="logoV">
+                        <p id="artVer" class="m-0 ps-1 "> Artista verificato</p>
+                    </div>
+                    <!--   <div class="ms-4">
+                        <h1>Yellowcard</h1>
+                        <p id="ascMens" class="mt-4 d-none mb-4 d-md-block"> 3.433.158 ascoltatori mensili</p>
+                    </div> -->
+                </div>
+
+                <div class="container-second ">
+                    <p id="ascMens2" class=" d-md-none"> 3.433.158 ascoltatori mensili</p>
+                    <div class="d-flex mt-3 justify-content-between align-items-center d-block d-md-none">
+                        <div>
+                            <button type="button" class="seguiti btn btn-dark btn-outline-secondary">Seguiti</button>
+                            <i class="bi bi-three-dots-vertical "></i>
+                        </div>
+                        <div class="d-flex d-block d-md-none">
+                            <i class="bi bi-shuffle fs-3"></i>
+                            <i id="spotiPlay2" class="fa-solid fa-circle-play me-4 ms-2" style="color: #1ed760;"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="row d-flex justify-content-between ">
+                        <div class="d-flex align-items-center d-none d-md-block">
+                            <i id="spotiPlay" class="fa-solid fa-circle-play me-4" style="color: #1ed760;"></i>
+                            <a href="#" id="following">FOLLOWING</a>
+                            <i class="bi bi-three-dots fs-4 ms-4 "></i>
+                        </div>
+                        <div class="top-search">
+                            <div class="d-flex align-items-center d-md-none ">
+                                <div class="position-relative mt-2">
+                                    <img src="assets/imgs/main/image-1.jpg" alt="...">
+                                    <i class="heart fa-brands fa-gratipay" style="color: #a9ffbc;"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <p><strong>Brani che ti piacciono</strong></p>
+                                    <p class="opacity-50">5 brani di Yellowcard</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-md-8 songlist mt-3">
+                            <p class="fw-bold mb-4">Popolari</p>
+                            <div id="song-container" class="container">
+                                <div class="row mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="col-8">
+                                            <div class="d-flex align-items-center w-300">
+                                                <div class="d-flex align-items-center">
+                                                    <p>1</p>
+                                                    <img src="assets/imgs/main/image-1.jpg" class="ms-3">
+                                                </div>
+                                                <div
+                                                    class="container ms-3 d-md-flex flex-md-row justify-content-between">
+                                                    <div>
+                                                        <p>Canzone Canzone</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="opacity-50">80.234.174</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="d-none d-md-block">Minuti</p>
+                                            <i class="bi bi-three-dots-vertical d-block d-md-none opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="col-8">
+                                            <div class="d-flex align-items-center w-300">
+                                                <div class="d-flex align-items-center">
+                                                    <p>2</p>
+                                                    <img src="assets/imgs/main/image-1.jpg" class="ms-3">
+                                                </div>
+                                                <div
+                                                    class="container ms-3 d-md-flex flex-md-row justify-content-between">
+                                                    <div>
+                                                        <p>Canzone</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="opacity-50">3.233.132.78</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="d-none d-md-block">Minuti</p>
+                                            <i class="bi bi-three-dots-vertical d-block d-md-none opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="col-8">
+                                            <div class="d-flex align-items-center w-300">
+                                                <div class="d-flex align-items-center">
+                                                    <p>3</p>
+                                                    <img src="assets/imgs/main/image-1.jpg" class="ms-3">
+                                                </div>
+                                                <div
+                                                    class="container ms-3 d-md-flex flex-md-row justify-content-between">
+                                                    <div>
+                                                        <p>Canzone Canzone provax2</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="opacity-50">13.223.120</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="d-none d-md-block">Minuti</p>
+                                            <i class="bi bi-three-dots-vertical d-block d-md-none opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="col-8">
+                                            <div class="d-flex align-items-center w-300">
+                                                <div class="d-flex align-items-center">
+                                                    <p>4</p>
+                                                    <img src="assets/imgs/main/image-1.jpg" class="ms-3">
+                                                </div>
+                                                <div
+                                                    class="container ms-3 d-md-flex flex-md-row justify-content-between">
+                                                    <div>
+                                                        <p>Canzone</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="opacity-50">33.412.32</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="d-none d-md-block">Minuti</p>
+                                            <i class="bi bi-three-dots-vertical d-block d-md-none opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="col-8">
+                                            <div class="d-flex align-items-center w-300">
+                                                <div class="d-flex align-items-center">
+                                                    <p>5</p>
+                                                    <img src="assets/imgs/main/image-1.jpg" class="ms-3">
+                                                </div>
+                                                <div
+                                                    class="container ms-3 d-md-flex flex-md-row justify-content-between">
+                                                    <div>
+                                                        <p>Canzone</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="opacity-50">323.432.32</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="d-none d-md-block">Minuti</p>
+                                            <i class="bi bi-three-dots-vertical d-block d-md-none opacity-50"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <p id="altro">VISUALIZZA ALTRO</p>
+                        </div>
+
+                        <div class="col-12 col-md-4 mt-3">
+                            <p id="brani">Brani che ti piacciono</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <img id="like" src="assets/imgs/main/image-10.jpg" alt="...">
+                                <p id="textCol">Hai messo Mi piace a 11 brani <br><span>Di yellowcard</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <p class="fw-bold ms-4 mb-3">Discografia</p>
+                <div class="row align-items-center">
+                    <div class="under card col-5 me-4 ms-4 col-md-2 mb-2">
+                        <img src="assets/imgs/search/image-13.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">2020 • Album</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 col-md-2 mb-2">
+                        <img src="assets/imgs/search/image-14.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">2018 • Singolo</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 me-4 ms-4 col-md-2 mb-2">
+                        <img src="assets/imgs/search/image-15.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">2023 • Album</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 col-md-2 mb-2">
+                        <img src="assets/imgs/search/image-18.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">2021 • Album</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 me-4 ms-4 col-md-2 mb-2">
+                        <img src="assets/imgs/search/image-20.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">2017 • Singolo</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 d-md-none col-md-2 mb-2">
+                        <img src="assets/imgs/search/image-5.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">2011 • Album</p>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="fw-bold ms-4 mt-4 mb-3">Scelta dei Fan</p>
+                <div class=" fan row mt-1">
+                    <div class="under card col-5 me-4 ms-4 col-md-2 mb-2 ">
+                        <img src="assets/imgs/search/image-17.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome Artista</h5>
+                            <p class="card-text">Categoria</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 col-md-2 mb-2 ">
+                        <img src="assets/imgs/search/image-11.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome Artista</h5>
+                            <p class="card-text">Categoria</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 me-4 ms-4 col-md-2 mb-2 ">
+                        <img src="assets/imgs/search/image-23.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome Artista</h5>
+                            <p class="card-text">Categoria</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 col-md-2 mb-2">
+                        <img src="assets/imgs/search/image-29.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome Artista</h5>
+                            <p class="card-text">Categoria</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 me-4 ms-4 mb-2 col-md-2 ">
+                        <img src="assets/imgs/search/image-26.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome Artista</h5>
+                            <p class="card-text">Categoria</p>
+                        </div>
+                    </div>
+                    <div class="under card col-5 col-md-2 d-md-none mb-2 ">
+                        <img src="assets/imgs/search/image-8.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome Artista</h5>
+                            <p class="card-text">Categoria</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <footer class="text-start">
+                    <div class="container p-4 pt-0">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Company</h6>
+                                <p>Impressum</p>
+                                <p>About</p>
+                                <p>Jobs</p>
+                            </div>
+                            <hr class="w-100 clearfix d-md-none" />
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Communities</h6>
+                                <p><a href="#">For Artists</a></p>
+                                <p><a href="#">Developers</a></p>
+                                <p><a href="#">Advertising</a></p>
+                                <p><a href="#">Investors</a></p>
+                            </div>
+                            <hr class="w-100 clearfix d-md-none" />
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+                                <p><a href="#">Your Account</a></p>
+                                <p><a href="#">Help</a></p>
+                            </div>
+                            <hr class="w-100 clearfix d-md-none" />
+                            <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end mb-5">
+                                <a class="btn btn-outline-light rounded-pill btn-floating m-1" href="#" role="button"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light rounded-pill btn-floating m-1" href="#" role="button"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-light rounded-pill btn-floating m-1" href="#" role="button"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <hr class="my-3">
+                        <section class=" pt-0">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-7 col-lg-8 text-center text-md-start ">
+                                    <div class="p-3 d-flex">
+                                        <p class="me-2">© 2023 Copyright: </p>
+                                        <a href="#">Spotify</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </footer>
+
+
+            </div>
+
+
+
+            <!--destra-->
+            <div id="right" class="col-2 d-none d-md-none d-lg-block">
+
+                <div class="text-end">
+                    <i class="bi bi-dash"></i>
+                    <i class="bi bi-window-stack ms-4"></i>
+                    <i class="bi bi-x-lg ms-4 me-2"></i>
+                </div>
+                <div class="d-flex mt-3 justify-content-between">
+                    <h2 class="text-light fs-6 ms-3"> Attività amici</h2>
+                    <div>
+                        <i class="bi bi-person-plus"></i>
+                        <i class="bi bi-x-lg ms-3 me-2"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--barra musica-->
+
+    <div id="player" class="col-12 music-player">
+        <div class="song-bar">
+            <div class="song-infos">
+                <div class="image-container">
+                    <img id="album-art" src="assets/imgs/main/image-11.jpg" alt="imgAlbum">
+                </div>
+                <div class="song-description">
+                    <p id="album-title" class="title">
+                        Bones
+                    </p>
+                    <p id="album-artist" class="artist">
+                        Imagine Dragons
+                    </p>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="far fa-heart"></i>
+            </div>
+        </div>
+        <div class="progress-controller">
+            <div class="control-buttons mt-4">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward" onclick=""></i> <!--aggiungi JS-->
+                <i id="play-pause-btn" onclick="" class="play-pause fas fa-play"></i> <!--aggiungi JS-->
+                <i class="fas fa-step-forward" onclick=""></i> <!--aggiungi JS-->
+                <i class="fas fa-undo-alt"></i>
+            </div>
+            <div class="progress-container">
+                <span id="time-over">
+                    0:49
+                </span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span id="time-remaining">
+                    2:45
+                </span>
+            </div>
+        </div>
+        <div class="other-features">
+            <i class="bi bi-mic"></i>
+            <i class="bi bi-list"></i>
+            <i class="bi bi-pc-display"></i>
+            <div class="volume-bar">
+                <i class="fas fa-volume-down"></i>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <i class="bi bi-arrows-angle-expand"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
