@@ -605,11 +605,39 @@ async function renderSearchPageResults(inputValue) {
   console.log(searchResult);
 
   let img, name, nameTrack, type, artistName, relevantResultBox;
+  // mobile var
+
   if (searchResult.mostRelevantResult.typeArtist) {
     img = searchResult.mostRelevantResult.picture_medium;
     name = searchResult.mostRelevantResult.nameArtist;
     type = searchResult.mostRelevantResult.typeArtist;
+    // mobile
 
+    /*  mobileRelevantResultBox = `
+    <div class="artist ms-4 mb-3">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="${img}" alt="picArtist" class="rounded-circle" width="60px">
+        </div>
+        <div class="ms-4">
+            <div class="d-flex">
+                <p><a href="./artist.html?=${searchResult.mostRelevantResult.artistId}">${name}</a></p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-patch-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    <path
+                        d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z" />
+                </svg>
+            </div>
+            <div>
+                <p>${type}</p>
+            </div>
+        </div>
+    </div>
+</div>
+    `; */
+    // desktop
     relevantResultBox = `
 <div class="d-none d-md-flex mt-3 flex-column border-radius p-3 margin-left size div-change-color">
 <div class="margin-card">
@@ -635,6 +663,20 @@ async function renderSearchPageResults(inputValue) {
     name = searchResult.mostRelevantResult.titleAlbum;
     type = searchResult.mostRelevantResult.typeAlbum;
     artistName = searchResult.mostRelevantResult.nameArtist;
+
+    /*  mobileRelevantResultBox = `
+    <div class="album ms-4 mb-3">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="${img}" alt="picSong" width="60px">
+        </div>
+        <div class="ms-4">
+            <p><a href="./album.html?=${searchResult.mostRelevantResult.albumId}">${name}</a></p>
+            <p>${type}</p>
+        </div>
+    </div>
+</div>
+    `; */
 
     relevantResultBox = `
     <div class="d-none d-md-flex mt-3 flex-column border-radius p-3 margin-left size div-change-color">
@@ -667,6 +709,41 @@ async function renderSearchPageResults(inputValue) {
     type = searchResult.mostRelevantResult.typeTrack;
     nameTrack = searchResult.mostRelevantResult.titleTrack;
     artistName = searchResult.mostRelevantResult.nameArtist;
+
+    /*  mobileRelevantResultBox = `
+    <div class="song ms-4 mb-3">
+    <div class="d-flex justify-content-between pointer-cursor">
+        <div>
+            <div class="d-flex justify-content-start">
+                <div>
+                    <img src="${img}" alt="picSong" width="60px">
+                </div>
+                <div class="ms-4">
+                    <p>${nameTrack}</p>
+                    <div class="d-flex align-items-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-explicit" viewBox="0 0 16 16">
+                            <path
+                                d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z" />
+                            <path
+                                d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z" />
+                        </svg>
+                        <p>${type} * <a href="./artist.html?id=${searchResult.mostRelevantResult.artistId}">${artistName}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="me-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-three-dots-vertical zoom2" viewBox="0 0 16 16">
+                <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+            </svg>
+        </div>
+    </div>
+</div>
+    `; */
+
     relevantResultBox = `
     <div class="d-none d-md-flex mt-3 flex-column border-radius p-3 margin-left size div-change-color">
     <div class="margin-card">
@@ -851,14 +928,6 @@ async function renderSearchPageResults(inputValue) {
 </div>`;
 
   // artist row
-  /*   const artistRow = `<div class="ms-4 d-none d-md-block">
-<p class="fw-bold ms-4 mb-3 margin-top font-size-high">Artisti</p>
-<div class=" fan row mt-1">
-    
-
-</div>
-</div>`; */
-
   let artistRowStart = `<div class="ms-4 d-none d-md-block">
 <p class="fw-bold ms-4 mb-3 margin-top font-size-high">Artisti</p>
 <div class=" fan row mt-1">`;
@@ -878,7 +947,7 @@ async function renderSearchPageResults(inputValue) {
     const artistCard = `<div class="under card col-5 me-4 ms-4 col-md-2 mb-2 div-change-color">
 <img src="${similarArtist.covers[1]}" class="card-img-top" alt="...">
 <div class="card-body">
-<h5 class="card-title"><a href="${similarArtist.id}">${similarArtist.name}</a></h5>
+<h5 class="card-title"><a href="./artist.html?id=${similarArtist.id}">${similarArtist.name}</a></h5>
    
 </div>
 </div>`;
@@ -897,13 +966,6 @@ async function renderSearchPageResults(inputValue) {
   const albumRowEnd = `</div>
 </div>
 </div>`;
-  /* const albumCard = `<div class="under card me-4 ms-4 col-md-2 mb-2 div-change-color">
-<img src="${similarAlbum.covers[1]}" class="card-img-top" alt="...">
-<div class="card-body">
-<h5 class="card-title"><a href="${similarAlbum.id}">${similarAlbum.name}</a></h5>
-    
-</div>
-</div>` */
 
   //remove duplicates for similarAlbum
   // FIX FILTRO PER ELIMINARE ALTRI DIFFERENTI
@@ -918,7 +980,7 @@ async function renderSearchPageResults(inputValue) {
     const albumCard = `<div class="under card me-4 ms-4 col-md-2 mb-2 div-change-color">
     <img src="${similarAlbum.covers[1]}" class="card-img-top" alt="...">
     <div class="card-body">
-    <h5 class="card-title"><a href="${similarAlbum.id}">${similarAlbum.title}</a></h5>
+    <h5 class="card-title"><a href="./album.html?id=${similarAlbum.id}">${similarAlbum.title}</a></h5>
         
     </div>
     </div>`;
@@ -929,7 +991,285 @@ async function renderSearchPageResults(inputValue) {
     }
   }
 
+  // MOBILE SEARCH
+  const phoneRender = `<div class="d-md-none margin-bottom-app">
+<div class="artist ms-4 mb-3">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picArtist" class="rounded-circle" width="60px">
+        </div>
+        <div class="ms-4">
+            <div class="d-flex">
+                <p>Nome artista</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-patch-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    <path
+                        d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z" />
+                </svg>
+            </div>
+            <div>
+                <p>Artista</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="song ms-4 mb-3">
+    <div class="d-flex justify-content-between pointer-cursor">
+        <div>
+            <div class="d-flex justify-content-start">
+                <div>
+                    <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+                </div>
+                <div class="ms-4">
+                    <p>Nome brano</p>
+                    <div class="d-flex align-items-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-explicit" viewBox="0 0 16 16">
+                            <path
+                                d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z" />
+                            <path
+                                d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z" />
+                        </svg>
+                        <p>Brano * Nome artista</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="me-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-three-dots-vertical zoom2" viewBox="0 0 16 16">
+                <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="album ms-4 mb-3">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+        </div>
+        <div class="ms-4">
+            <p>Nome album</p>
+            <p>Album</p>
+        </div>
+    </div>
+</div>
+<div class="playlist ms-4 mb-3">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+        </div>
+        <div class="ms-4">
+            <p>Nome playlist</p>
+            <p>Playlist</p>
+        </div>
+    </div>
+</div>
+<div class="artist ms-4 mb-3 d-md-none">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picArtist" class="rounded-circle" width="60px">
+        </div>
+        <div class="ms-4">
+            <div class="d-flex">
+                <p>Nome artista</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-patch-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    <path
+                        d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z" />
+                </svg>
+            </div>
+            <div>
+                <p>Artista</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="song ms-4 mb-3 d-md-none">
+    <div class="d-flex justify-content-between pointer-cursor">
+        <div>
+            <div class="d-flex justify-content-start">
+                <div>
+                    <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+                </div>
+                <div class="ms-4">
+                    <p>Nome brano</p>
+                    <div class="d-flex align-items-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-explicit" viewBox="0 0 16 16">
+                            <path
+                                d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z" />
+                            <path
+                                d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z" />
+                        </svg>
+                        <p>Brano * Nome artista</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="me-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-three-dots-vertical zoom2" viewBox="0 0 16 16">
+                <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="album ms-4 mb-3 d-md-none">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+        </div>
+        <div class="ms-4">
+            <p>Nome album</p>
+            <p>Album</p>
+        </div>
+    </div>
+</div>
+<div class="playlist ms-4 mb-3 d-md-none">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+        </div>
+        <div class="ms-4">
+            <p>Nome playlist</p>
+            <p>Playlist</p>
+        </div>
+    </div>
+</div>
+<div class="artist ms-4 mb-3 d-md-none">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picArtist" class="rounded-circle" width="60px">
+        </div>
+        <div class="ms-4">
+            <div class="d-flex">
+                <p>Nome artista</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-patch-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                    <path
+                        d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z" />
+                </svg>
+            </div>
+            <div>
+                <p>Artista</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="song ms-4 mb-3 d-md-none">
+    <div class="d-flex justify-content-between pointer-cursor">
+        <div>
+            <div class="d-flex justify-content-start">
+                <div>
+                    <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+                </div>
+                <div class="ms-4">
+                    <p>Nome brano</p>
+                    <div class="d-flex align-items-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-explicit" viewBox="0 0 16 16">
+                            <path
+                                d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z" />
+                            <path
+                                d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z" />
+                        </svg>
+                        <p>Brano * Nome artista</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="me-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-three-dots-vertical zoom2" viewBox="0 0 16 16">
+                <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="album ms-4 mb-3 d-md-none">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+        </div>
+        <div class="ms-4">
+            <p>Nome album</p>
+            <p>Album</p>
+        </div>
+    </div>
+</div>
+<div class="playlist ms-4 mb-3 d-md-none">
+    <div class="d-flex justify-content-start pointer-cursor">
+        <div>
+            <img src="assets/imgs/main/image-1.jpg" alt="picSong" width="60px">
+        </div>
+        <div class="ms-4">
+            <p>Nome playlist</p>
+            <p>Playlist</p>
+        </div>
+    </div>
+</div>
+</div>`;
+
+  const mobileStart = `<div class="d-md-none margin-bottom-app">`;
+  const mobileEnd = `</div>`;
+  let mobileRelevantTracksBox = "";
+  searchResult.tracklist.forEach((track) => {
+    const { id, title, explicit_lyrics, album, artist } = track;
+
+    const mobileRelevantResultDiv = `
+    <div class="song ms-4 mb-3">
+    <div class="d-flex justify-content-between pointer-cursor">
+        <div>
+            <div class="d-flex justify-content-start">
+                <div>
+                    <img src="${album.cover_small}" alt="picSong" width="60px">
+                </div>
+                <div class="ms-4">
+                    <p>${title}</p>
+                    <div class="d-flex align-items-baseline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-explicit" viewBox="0 0 16 16">
+                            <path
+                                d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826v2.408Z" />
+                            <path
+                                d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z" />
+                        </svg>
+                        <p>track * <a href="./artist.html?id=${artist.artistId}">${artist.name}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="me-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-three-dots-vertical zoom2" viewBox="0 0 16 16">
+                <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+            </svg>
+        </div>
+    </div>
+    </div>
+    `;
+
+    mobileRelevantTracksBox += mobileRelevantResultDiv;
+  });
+
   // add everything to div
   dynamicSearchDiv.innerHTML =
-    filterBar + relevantResults + artistRowStart + albumRowStart;
+    filterBar +
+    mobileStart +
+    mobileRelevantTracksBox +
+    mobileEnd +
+    relevantResults +
+    artistRowStart +
+    albumRowStart;
 }
